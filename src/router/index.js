@@ -3,6 +3,7 @@ import Home from "../views/Home.vue";
 import Home2 from "../views/Home2.vue";
 import Home3 from "../views/Home3.vue";
 import Home4 from "../views/Home4.vue";
+import Home5 from "../views/Home5.vue";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/home4",
     name: "Home4",
     component: Home4,
+  },
+  {
+    path: "/home5",
+    name: "Home5",
+    component: Home5,
   },
 ];
 

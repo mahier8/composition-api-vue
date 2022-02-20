@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "welcome to the new blog",
+      "body": "lorem ipsum dolar 1111111111111",
+      "tags": ["webdev", "coding", "news"]
+    },
+    {
+      "id": 2,
+      "title": "top 5 css tips",
+      "body": "lorem ipsum dolar 222222222222",
+      "tags": ["webdev", "coding", "news"]
+    }
+  ]
+}
