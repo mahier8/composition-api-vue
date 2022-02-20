@@ -2,7 +2,11 @@
   <div class="home">
     <h1>Home</h1>
     <!-- another example of data binding, by passing in props -->
-    <PostList :posts="posts" />
+    <PostList v-if="showPosts" :posts="posts" />
+    <!-- to toggle the post we click on this button-->
+    <button @click="showPosts = !showPosts">toggle posts</button>
+    <!-- to delete the post we click on this button-->
+    <button @click="posts.pop()">delete post</button>
   </div>
 </template>
 
@@ -22,8 +26,9 @@ export default {
         id: 2,
       },
     ]);
+    const showPosts = ref(true);
 
-    return { posts };
+    return { posts, showPosts };
   },
 };
 </script>
