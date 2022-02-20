@@ -4,11 +4,12 @@
     <input type="text" v-model="search" />
     <p>search term - {{ search }}</p>
     <div v-for="name in matchingNames" :key="name">{{ name }}</div>
+    <button @click="handleClick">stop watching</button>
   </div>
 </template>
 
 <script>
-import { computed, ref } from "vue";
+import { computed, ref, watch, watchEffect } from "vue";
 
 export default {
   name: "Home3",
@@ -24,11 +25,30 @@ export default {
       "peach",
     ]);
 
+    // watch hook
+    const stopWatch = watch(search, () => {
+      console.log("watch function ran", search.value);
+    });
+
+    const stopWatchEffect = watchEffect(() => {
+      console.log("watch effect function ran");
+    });
+
     const matchingNames = computed(() => {
       return names.value.filter((name) => name.includes(search.value));
     });
 
-    return { names, search, matchingNames };
+    const handleClick = () => {
+      stopWatch();
+      stopWatchEffect();
+    };
+
+    return {
+      names,
+      search,
+      matchingNames,
+      handleClick,
+    };
   },
 };
 </script>
