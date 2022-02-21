@@ -1,7 +1,22 @@
 <template>
   <div class="post">
-    <h3>{{ post.title }}</h3>
+    <router-link
+      :to="{
+        name: 'Details',
+        params: {
+          id: post.id,
+        },
+      }"
+    >
+      <h3>{{ post.title }}</h3>
+    </router-link>
     <p>{{ snippet }}</p>
+    <!-- This is to show the tags, in the db.json -->
+    <!-- we loop through all the tags and display each set -->
+    <span v-for="tag in post.tags" :key="tag">
+      <!-- no we read the tags inside the span tags -->
+      #{{ tag }}
+    </span>
   </div>
 </template>
 

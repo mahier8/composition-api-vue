@@ -4,6 +4,8 @@ import Home2 from "../views/Home2.vue";
 import Home3 from "../views/Home3.vue";
 import Home4 from "../views/Home4.vue";
 import Home5 from "../views/Home5.vue";
+import Home6 from "../views/Home6.vue";
+import Details from "../views/Details.vue";
 
 const routes = [
   {
@@ -30,6 +32,18 @@ const routes = [
     path: "/home5",
     name: "Home5",
     component: Home5,
+  },
+  {
+    path: "/home6",
+    name: "Home6",
+    component: Home6,
+  },
+  {
+    // for each post following the path of the id
+    path: "/posts/:id",
+    name: "Details",
+    component: Details,
+    props: true,
   },
 ];
 
